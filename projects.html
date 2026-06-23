@@ -42,12 +42,25 @@
     <div>SCROLL <span id="hudScroll">000</span>%</div>
   </div>
 
-  <main class="page">
-
-    <a class="back-link" href="index.html">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
-      Pranati Arni
+  <!-- ============================== NAVBAR ============================== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="index.html" aria-label="Home">
+      <span class="nav__mark">PA</span>
+      <span class="nav__name">Pranati Arni</span>
     </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="projects.html" class="is-current">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a class="nav__cta" href="index.html#contact">Get in touch</a>
+    </nav>
+  </header>
+
+  <main class="page">
 
     <header class="page-head reveal">
       <span class="kicker">Selected Work · 2026</span>

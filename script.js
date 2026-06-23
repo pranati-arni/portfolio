@@ -69,6 +69,31 @@ const projects = [
 })();
 
 /* =================================================================
+   NAVBAR — condense on scroll + mobile menu toggle (both pages)
+   ================================================================= */
+(function navbar() {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+
+  const onNavScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', onNavScroll, { passive: true });
+  onNavScroll();
+
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  if (toggle && links) {
+    const setOpen = (open) => {
+      toggle.classList.toggle('open', open);
+      links.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => setOpen(!links.classList.contains('open')));
+    // close after tapping a link
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  }
+})();
+
+/* =================================================================
    RAIL — build nodes, track scroll, highlight active (home only)
    ================================================================= */
 const SECTIONS = [
