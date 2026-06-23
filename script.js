@@ -10,6 +10,63 @@ const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
 function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 /* =================================================================
+   PREMIUM — intro boot-up loader + page-to-page transitions
+   (runs first so the overlay always lifts)
+   ================================================================= */
+(function intro() {
+  const overlay = document.getElementById('pageTransition');
+  if (!overlay) return;
+  const bar = overlay.querySelector('.pt__bar span');
+  const status = overlay.querySelector('.pt__status');
+  const hide = () => overlay.classList.add('is-hidden');
+
+  if (reduceMotion) { hide(); return; }
+
+  // boot sequence on first visit of the session; quick fade otherwise
+  let firstVisit = true;
+  try { firstVisit = !sessionStorage.getItem('pa_visited'); sessionStorage.setItem('pa_visited', '1'); } catch (e) {}
+
+  if (firstVisit) {
+    let p = 0;
+    const tick = () => {
+      p = Math.min(100, p + (3 + Math.random() * 9));
+      if (bar) bar.style.width = p + '%';
+      if (status) status.textContent = p < 100 ? 'Initializing… ' + Math.round(p) + '%' : 'Ready';
+      if (p < 100) setTimeout(tick, 60);
+      else setTimeout(hide, 360);
+    };
+    setTimeout(tick, 200);
+  } else {
+    if (bar) bar.style.width = '100%';
+    setTimeout(hide, 280);
+  }
+
+  // smooth fade when navigating between internal pages
+  document.querySelectorAll('a[href]').forEach(a => {
+    let url;
+    try { url = new URL(a.href, location.href); } catch (e) { return; }
+    const external  = a.target === '_blank' || url.origin !== location.origin || a.href.startsWith('mailto:');
+    const inPageHash = url.pathname === location.pathname && url.hash;
+    if (external || inPageHash) return;
+
+    a.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;  // allow open-in-new-tab
+      // same page, no hash → just glide to top, no reload
+      if (url.pathname === location.pathname && !url.hash) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      e.preventDefault();
+      if (bar) bar.style.width = '100%';
+      if (status) status.textContent = 'Loading…';
+      overlay.classList.remove('is-hidden');
+      setTimeout(() => { location.href = a.href; }, 480);
+    });
+  });
+})();
+
+/* =================================================================
    PROJECTS DATA  —  to add a real project:
    1. copy one object below
    2. fill in title / desc / tag / link
@@ -304,4 +361,21 @@ if (nodesWrap) {
     glow.style.transform = `translate(${x}px, ${y}px)`;
     requestAnimationFrame(trail);
   })();
+})();
+
+/* =================================================================
+   PREMIUM — magnetic buttons (pull slightly toward the cursor)
+   ================================================================= */
+(function magnetic() {
+  if (reduceMotion || !canHover) return;
+  const STRENGTH = 16;
+  document.querySelectorAll('.cta, .nav__cta, .more-link').forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const r = el.getBoundingClientRect();
+      const mx = (e.clientX - (r.left + r.width / 2)) / r.width;
+      const my = (e.clientY - (r.top + r.height / 2)) / r.height;
+      el.style.transform = `translate(${mx * STRENGTH}px, ${my * STRENGTH}px)`;
+    });
+    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+  });
 })();
