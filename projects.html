@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Projects — Pranati Arni</title>
+  <meta name="description" content="Projects by Pranati Arni — a growing collection of computer science and AI builds." />
+  <meta name="author" content="Pranati Arni" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Projects — Pranati Arni" />
+  <meta property="og:description" content="A growing collection of computer science and AI builds." />
+
+  <!-- Inline SVG favicon: silver "PA" tile with blue border -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0f'/%3E%3Crect x='3' y='3' width='58' height='58' rx='12' fill='none' stroke='%234ea3ff' stroke-width='2'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='30' fill='%23c7ccd6'%3EPA%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Ambient layers (same atmosphere as the home page) -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+  </div>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- HUD overlay -->
+  <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="hud" aria-hidden="true">
+    <div>SYS ONLINE <span class="blip"></span></div>
+    <div class="on">33.15°N · 96.82°W</div>
+    <div>SCROLL <span id="hudScroll">000</span>%</div>
+  </div>
+
+  <main class="page">
+
+    <a class="back-link" href="index.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      Pranati Arni
+    </a>
+
+    <header class="page-head reveal">
+      <span class="kicker">Selected Work · 2026</span>
+      <h1>Projects</h1>
+      <p class="page-sub">
+        A growing collection of things I'm building in computer science and AI.
+        More on the way — the placeholders below are slots I'll fill as I finish each one.
+      </p>
+    </header>
+
+    <div class="projects-grid reveal" id="projectsGrid"><!-- cards injected by script.js --></div>
+
+    <footer>
+      <p>© 2026 Pranati Arni · Frisco, TX · <a class="back-link" href="index.html" style="text-transform:none;letter-spacing:0;">Back to home</a></p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
