@@ -5,8 +5,10 @@ left edge that fills as you scroll, with clickable nodes that jump to each secti
 (About · Projects · Skills · Contact). Black / white / silver-metallic theme with a single
 restrained **blue** accent, and continuous subtle motion throughout.
 
-Two pages:
+Pages:
 - **`index.html`** — the home page with the rail.
+- **`about.html`** — about, education, interests.
+- **`experience.html`** — timeline, activities & clubs, competitions.
 - **`projects.html`** — a dedicated full projects page.
 
 No build step, no frameworks. Styles and behavior are shared across both pages via
@@ -90,8 +92,10 @@ Update the social-preview URL in `index.html`:
 ## 📁 Files
 | File | Purpose |
 |------|---------|
-| `index.html`    | Home page — hero, rail, About / Projects / Skills / Contact. |
-| `projects.html` | Dedicated full projects page. |
+| `index.html`     | Home page — hero, rail, About / Projects / Skills / Contact. |
+| `about.html`     | About, education, interests. |
+| `experience.html`| Timeline, activities & clubs, competitions. |
+| `projects.html`  | Dedicated full projects page. |
 | `styles.css`    | All styles, shared by both pages. |
 | `script.js`     | All behavior + the `projects` data, shared by both pages. |
 | `README.md`     | This guide. |

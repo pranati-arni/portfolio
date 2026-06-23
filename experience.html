@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Experience — Pranati Arni</title>
+  <meta name="description" content="Experience, activities, and competitions — Pranati Arni, high school junior in Frisco, TX." />
+  <meta name="author" content="Pranati Arni" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Experience — Pranati Arni" />
+  <meta property="og:description" content="Activities, clubs, and CS competitions." />
+
+  <!-- Inline SVG favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff5e8c'/%3E%3Crect width='64' height='64' rx='16' fill='%23ff7a3d' opacity='0.55'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='30' fill='%23ffffff'%3EPA%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+  </div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ============================== NAVBAR ============================== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="index.html" aria-label="Home">
+      <span class="nav__mark">PA</span>
+      <span class="nav__name">Pranati Arni</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experience.html" class="is-current">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a class="nav__cta" href="index.html#contact">Get in touch</a>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <header class="page-head reveal">
+      <span class="kicker">What I've been up to</span>
+      <h1>Experience</h1>
+      <p class="page-sub">The clubs, competitions, and moments that have shaped my path in computer science — with plenty more to come.</p>
+    </header>
+
+    <!-- ===== Timeline ===== -->
+    <div class="block reveal" style="margin-top:56px;">
+      <div class="section-head"><span class="num">01</span><h2>The journey so far</h2></div>
+      <!-- TODO: tweak the years + text to match your real timeline -->
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-item__rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
+          <div class="tl-body">
+            <span class="tl-year">Early on</span>
+            <h3>Fell in love with code</h3>
+            <p>Discovered computer science young and couldn't stop tinkering — the start of everything.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-item__rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
+          <div class="tl-body">
+            <span class="tl-year">High school</span>
+            <h3>Joined CS clubs</h3>
+            <p>Got involved with computer science clubs, met people who love this stuff as much as I do, and made it genuinely fun.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-item__rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
+          <div class="tl-body">
+            <span class="tl-year">2025</span>
+            <h3>Started competing</h3>
+            <p>Began taking part in CS competitions — the kind of challenge that makes the learning stick.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-item__rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
+          <div class="tl-body">
+            <span class="tl-year">2026</span>
+            <h3>Diving into AI</h3>
+            <p>Focusing in on artificial intelligence and machine learning — my favorite corner of CS right now.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-item__rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
+          <div class="tl-body">
+            <span class="tl-year">Next</span>
+            <h3>College CS &amp; internships</h3>
+            <p>Working toward studying computer science in college and landing internships where I can keep building.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Activities ===== -->
+    <div class="block reveal">
+      <div class="section-head"><span class="num">02</span><h2>Activities &amp; clubs</h2></div>
+      <!-- TODO: replace with your real clubs / roles -->
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="meta">Club</div>
+          <h3>Computer Science Club</h3>
+          <p>An active member — collaborating on projects, learning from peers, and keeping the spark alive.</p>
+        </div>
+        <div class="info-card">
+          <div class="meta">Club</div>
+          <h3>Coding &amp; Builds</h3>
+          <p>Hands-on time building small projects and exploring new tools and languages with friends.</p>
+        </div>
+        <div class="info-card">
+          <div class="meta">Add yours</div>
+          <h3>More coming soon</h3>
+          <p>A spot for the next club, role, or activity I take on — check back as it grows.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Competitions ===== -->
+    <div class="block reveal">
+      <div class="section-head"><span class="num">03</span><h2>Competitions</h2></div>
+      <!-- TODO: replace with the specific competitions, years, and results -->
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="meta">2025</div>
+          <h3>CS Competition</h3>
+          <p>Took part in a computer science competition — a great test of problem-solving under pressure.</p>
+        </div>
+        <div class="info-card">
+          <div class="meta">Ongoing</div>
+          <h3>Future contests</h3>
+          <p>Always on the lookout for the next competition to enter and learn from.</p>
+        </div>
+      </div>
+
+      <a class="more-link" href="projects.html">
+        See my projects
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <footer>
+      <p>© 2026 Pranati Arni · Frisco, TX</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
