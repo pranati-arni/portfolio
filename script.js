@@ -130,10 +130,11 @@ const projects = [
    RAIL — build nodes, track scroll, highlight active (home only)
    ================================================================= */
 const SECTIONS = [
-  { id: 'about',    label: 'About'    },
-  { id: 'projects', label: 'Projects' },
-  { id: 'skills',   label: 'Skills'   },
-  { id: 'contact',  label: 'Contact'  }
+  { id: 'about',        label: 'About'        },
+  { id: 'achievements', label: 'Achievements' },
+  { id: 'projects',     label: 'Projects'     },
+  { id: 'skills',       label: 'Skills'       },
+  { id: 'contact',      label: 'Contact'      }
 ];
 
 let nodeEls = [];
@@ -259,4 +260,59 @@ if (nodesWrap) {
     });
     el.addEventListener('mouseleave', () => { el.style.transform = ''; });
   });
+})();
+
+/* =================================================================
+   HERO DEPTH — mouse parallax on the glow + scroll fade/scale
+   ================================================================= */
+(function heroDepth() {
+  const hero = document.getElementById('top');
+  if (!hero || reduceMotion) return;
+  const glowWrap = hero.querySelector('.hero__glow-wrap');
+  const content  = hero.querySelector('.hero__content');
+
+  if (canHover && glowWrap) {
+    hero.addEventListener('mousemove', (e) => {
+      const r = hero.getBoundingClientRect();
+      const mx = (e.clientX - r.width / 2) / r.width;
+      const my = (e.clientY - r.height / 2) / r.height;
+      glowWrap.style.transform = `translate(${mx * 46}px, calc(-50% + ${my * 34}px))`;
+    });
+    hero.addEventListener('mouseleave', () => { glowWrap.style.transform = ''; });
+  }
+
+  if (content) {
+    window.addEventListener('scroll', () => {
+      const p = Math.min(1, window.scrollY / (window.innerHeight || 1));
+      content.style.opacity = String(Math.max(0, 1 - p * 1.15));
+      content.style.transform = `translateY(${p * 46}px) scale(${1 - p * 0.06})`;
+    }, { passive: true });
+  }
+})();
+
+/* =================================================================
+   FLOATING ACHIEVEMENTS — gentle float + scroll parallax + rotation
+   ================================================================= */
+(function floatingAchievements() {
+  const cards = Array.from(document.querySelectorAll('.ach-card'));
+  if (!cards.length || reduceMotion) return;
+
+  let t0 = null;
+  function frame(now) {
+    if (t0 === null) t0 = now;
+    const t = (now - t0) / 1000;
+    const vh = window.innerHeight || 1;
+    for (let i = 0; i < cards.length; i++) {
+      const c = cards[i];
+      const r = c.getBoundingClientRect();
+      const fromCenter = ((r.top + r.height / 2) - vh / 2) / vh;   // -0.5..0.5 across viewport
+      const speed = parseFloat(c.dataset.speed || '1');
+      const parallax = -fromCenter * 26 * speed;
+      const floatY = Math.sin(t * 0.8 + i * 1.1) * 6;
+      const rot = Math.sin(t * 0.5 + i * 1.3) * 1.6 - fromCenter * 3 * speed;
+      c.style.transform = `translateY(${(parallax + floatY).toFixed(2)}px) rotate(${rot.toFixed(2)}deg)`;
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();
