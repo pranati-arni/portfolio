@@ -96,6 +96,8 @@ Update the social-preview URL in `index.html`:
 | `about.html`     | About, education, interests. |
 | `experience.html`| Timeline, activities & clubs, competitions. |
 | `projects.html`  | Dedicated full projects page. |
-| `styles.css`    | All styles, shared by both pages. |
-| `script.js`     | All behavior + the `projects` data, shared by both pages. |
-| `README.md`     | This guide. |
+| `resume.html`    | Styled résumé page (with print / save-as-PDF). |
+| `resume.docx`    | Downloadable Word résumé. |
+| `styles.css`     | All styles, shared across pages. |
+| `script.js`      | All behavior + the `projects` data, shared across pages. |
+| `README.md`      | This guide. |

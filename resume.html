@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Résumé — Pranati Arni</title>
+  <meta name="description" content="Résumé of Pranati Arni, junior at Rick Reedy High School, Frisco, TX." />
+  <meta name="author" content="Pranati Arni" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Résumé — Pranati Arni" />
+  <meta property="og:description" content="Résumé of Pranati Arni, junior at Rick Reedy High School, Frisco, TX." />
+
+  <!-- Inline SVG favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff5e8c'/%3E%3Crect width='64' height='64' rx='16' fill='%23ff7a3d' opacity='0.55'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='30' fill='%23ffffff'%3EPA%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+  </div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ============================== NAVBAR ============================== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="index.html" aria-label="Home">
+      <span class="nav__mark">PA</span>
+      <span class="nav__name">Pranati Arni</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html" class="is-current">Résumé</a>
+      <a class="nav__cta" href="index.html#contact">Get in touch</a>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <header class="page-head reveal">
+      <span class="kicker">My background, on one page</span>
+      <h1>Résumé</h1>
+    </header>
+
+    <div class="resume-toolbar reveal">
+      <button class="resume-btn resume-btn--primary" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        Print / Save as PDF
+      </button>
+      <a class="resume-btn" href="resume.docx" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        Download (Word)
+      </a>
+    </div>
+
+    <article class="resume-sheet reveal">
+
+      <div class="r-head">
+        <h2>Pranati Arni</h2>
+        <div class="r-contact">
+          Frisco, Texas · <a href="mailto:pranatiarni@gmail.com">pranatiarni@gmail.com</a><br />
+          <a href="https://www.linkedin.com/in/pranati-arni-b55060337" target="_blank" rel="noopener">linkedin.com/in/pranati-arni</a>
+          · <a href="https://github.com/pranatiarni" target="_blank" rel="noopener">github.com/pranatiarni</a>
+        </div>
+      </div>
+
+      <h3>Education</h3>
+      <div class="r-entry">
+        <div class="r-entry__top">
+          <span><span class="r-role">Rick Reedy High School</span></span>
+          <span class="r-date">Graduation 2028</span>
+        </div>
+        <ul>
+          <li>Weighted GPA: 5.260</li>
+          <li>Class Rank: 21 / 582</li>
+        </ul>
+      </div>
+
+      <h3>Technical Skills</h3>
+      <div class="r-line"><b>Programming Languages:</b> Python (Advanced), Java (Advanced), Swift (Beginner), SQL (Beginner), JavaScript (Beginner)</div>
+      <div class="r-line"><b>Programs &amp; Tools:</b> Replit (Intermediate), GitHub (Intermediate), Tableau (Intermediate), Unity (Beginner)</div>
+      <div class="r-line"><b>Spoken Languages:</b> Telugu (Proficient), Kannada (Intermediate), English</div>
+
+      <h3>Professional &amp; Technical Experience</h3>
+      <div class="r-entry">
+        <div class="r-entry__top">
+          <span><span class="r-role">Chief Technology Officer</span>, <span class="r-org">Compassion In Crisis</span></span>
+          <span class="r-date">2024 – Present</span>
+        </div>
+        <ul>
+          <li>Produced an organized, detailed website for the nonprofit to foster awareness and support fundraising.</li>
+          <li>Administered the organization's technical presence, including online marketing, digital tools, and research reports.</li>
+        </ul>
+      </div>
+      <div class="r-entry">
+        <div class="r-entry__top">
+          <span><span class="r-role">Project Management</span>, <span class="r-org">DECA</span></span>
+          <span class="r-date">2024 – Present</span>
+        </div>
+        <ul>
+          <li>Applied the project management process to plan, organize, execute, and evaluate the nonprofit's results, using risk management plans, quality management, SCRUM, and SWOT.</li>
+          <li>Created a 20 page report and presentation demonstrating the process; placed as a state and international finalist with a 95 percent score.</li>
+        </ul>
+      </div>
+      <div class="r-entry">
+        <div class="r-entry__top">
+          <span><span class="r-role">Technical Internship Preparation</span>, <span class="r-org">Elite 101</span></span>
+          <span class="r-date">2025</span>
+        </div>
+        <ul>
+          <li>Invited and selected to participate in a technical internship preparation program.</li>
+          <li>Learned Git, Jira ticketing, source control, and team collaboration in Miro, and built a simple chatbot that simulates a conversation with a user.</li>
+        </ul>
+      </div>
+
+      <h3>Leadership &amp; Community Service</h3>
+      <div class="r-entry">
+        <div class="r-entry__top">
+          <span><span class="r-role">Event Chapter Officer</span>, <span class="r-org">Business Professionals of America</span></span>
+          <span class="r-date">2025 – Present</span>
+        </div>
+        <ul>
+          <li>Prepared study guides and workshops for fellow competitors using project management and leadership skills.</li>
+          <li>Conducted interviews with professionals and detailed research to analyze multiple perspectives on AI for a report. (15 volunteer hours)</li>
+        </ul>
+      </div>
+      <div class="r-entry">
+        <div class="r-entry__top">
+          <span><span class="r-role">Assistant Dance Instructor</span>, <span class="r-org">Masti Dance Academy</span></span>
+          <span class="r-date">2024 – Present</span>
+        </div>
+        <ul>
+          <li>Assisted the lead instructor in teaching choreography and helped run large recitals by managing preparation and coordinating logistics. (26 volunteer hours)</li>
+        </ul>
+      </div>
+
+      <h3>Awards</h3>
+      <div class="r-award"><span>BPA Virtual Interview &amp; Portfolio Development, National Finalist</span><span>2026</span></div>
+      <div class="r-award"><span>DECA International Career Development Qualifier &amp; Top 9 State Winner</span><span>2025</span></div>
+      <div class="r-award"><span>1st Place, BPA Region Level &amp; State Qualifier</span><span>2025</span></div>
+      <div class="r-award"><span>NCWIT Aspirations in Computing, Regional Honorable Mention</span><span>2025</span></div>
+
+    </article>
+
+    <footer>
+      <p>© 2026 Pranati Arni · Frisco, TX</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

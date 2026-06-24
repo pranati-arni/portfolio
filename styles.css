@@ -593,6 +593,59 @@ footer {
 .tl-body p { color: var(--muted); font-size: 0.98rem; max-width: 640px; }
 
 /* =================================================================
+   RÉSUMÉ PAGE
+   ================================================================= */
+.resume-toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 28px; }
+.resume-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+  padding: 12px 20px; border-radius: 12px; cursor: pointer;
+  border: 1px solid var(--border-hi); background: #fff; color: var(--pink);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.resume-btn:hover { transform: translateY(-2px); border-color: var(--pink); box-shadow: 0 10px 24px -14px var(--warm-glow); }
+.resume-btn--primary { background: var(--grad-135); color: #fff; border-color: transparent; box-shadow: 0 12px 28px -10px var(--warm-glow); }
+.resume-btn svg { width: 16px; height: 16px; }
+
+.resume-sheet {
+  background: #fff; border: 1px solid var(--border); border-radius: 20px;
+  padding: clamp(28px, 5vw, 56px); max-width: 880px;
+  box-shadow: 0 26px 64px -32px var(--warm-glow);
+}
+.r-head h2 { font-size: clamp(1.7rem, 5vw, 2.2rem); font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.r-contact { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); line-height: 1.9; }
+.r-contact a { color: var(--pink); }
+
+.resume-sheet h3 {
+  font-family: "Space Grotesk", sans-serif; font-size: 0.9rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--text);
+  margin: 32px 0 16px; padding-bottom: 8px; position: relative;
+}
+.resume-sheet h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 46px; height: 3px; border-radius: 3px; background: var(--grad); }
+
+.r-entry { margin-bottom: 18px; }
+.r-entry__top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.r-role { font-weight: 700; color: var(--text); }
+.r-org { color: var(--muted); }
+.r-date { font-family: var(--mono); font-size: 0.78rem; color: var(--faint); white-space: nowrap; }
+.r-entry ul { margin: 8px 0 0 18px; color: var(--muted); font-size: 0.95rem; }
+.r-entry li { margin-bottom: 5px; }
+.r-line { color: var(--muted); font-size: 0.96rem; margin-bottom: 6px; }
+.r-line b { color: var(--text); }
+.r-award { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 7px 0; border-bottom: 1px solid var(--border); }
+.r-award:last-child { border-bottom: none; }
+.r-award span:last-child { font-family: var(--mono); font-size: 0.78rem; color: var(--faint); }
+
+@media print {
+  .nav, .bg-orbs, .cursor-glow, .page-transition, .resume-toolbar, .page-head, footer { display: none !important; }
+  body { background: #fff; }
+  body::before { display: none; }
+  .page { padding: 0; max-width: none; }
+  .resume-sheet { box-shadow: none; border: none; border-radius: 0; padding: 0; max-width: none; }
+  a { color: #000 !important; }
+}
+
+/* =================================================================
    QUICK CLEAN FADE — page-transition overlay
    ================================================================= */
 .page-transition {
