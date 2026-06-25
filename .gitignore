@@ -1,0 +1,5 @@
+# Local screenshot / browser-automation review artifacts (not part of the site)
+.playwright-mcp/
+mobile-*.png
+m-home-*.png
+page-*.png
