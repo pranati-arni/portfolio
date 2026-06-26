@@ -14,7 +14,7 @@ import re
 import pathlib
 
 ROOT = pathlib.Path(__file__).parent
-PAGES = ["index.html", "about.html", "experience.html", "resume.html", "projects.html"]
+PAGES = ["index.html", "resume.html"]
 START = "<!-- styles:start (inlined from styles.css by inline-css.py — edit styles.css, then re-run) -->"
 END = "<!-- styles:end -->"
 

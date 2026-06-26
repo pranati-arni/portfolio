@@ -139,9 +139,11 @@ const projects = [
 const SECTIONS = [
   { id: 'about',        label: 'About'        },
   { id: 'journey',      label: 'Journey'      },
-  { id: 'achievements', label: 'Achievements' },
+  { id: 'experience',   label: 'Experience'   },
+  { id: 'achievements', label: 'Awards'       },
   { id: 'projects',     label: 'Projects'     },
   { id: 'skills',       label: 'Skills'       },
+  { id: 'interests',    label: 'Interests'    },
   { id: 'contact',      label: 'Contact'      }
 ];
 
